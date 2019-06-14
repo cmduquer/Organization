@@ -3,6 +3,9 @@ package com.employees.organization.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,9 +19,11 @@ import lombok.ToString;
 @Setter
 @ToString
 @EqualsAndHashCode
+@Document(collection="organization")
 public class Organization {
 
-	private Long id;
+	@Id
+	private String id;
 	private String name;
 	private String address;
 	private List<Department> departments = new ArrayList<>();

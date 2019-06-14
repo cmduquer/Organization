@@ -12,7 +12,7 @@ public class OrganizationRepositoryImpl implements OrganizationRepository{
 	
 	@Override
 	public Organization add(Organization organization) {
-		organization.setId((long) (organizations.size()+1));
+		organization.setId("" + (organizations.size()+1));
 		organizations.add(organization);
 		return organization;
 	}
